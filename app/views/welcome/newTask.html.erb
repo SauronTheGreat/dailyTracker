@@ -1,0 +1,14 @@
+<%= form_tag(controller: "welcome",action: "createTask",method: "post") do   %>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Project Name</label>
+    <%= select_tag(:project_id,options_from_collection_for_select(Project.all, "id", "name",class: "form-control")) %>
+  </div>
+  <div class="form-group">
+    <label for="desc">Task Desc</label>
+   <%= text_area_tag :desc %>
+  </div>
+
+
+  <button type="submit" class="btn btn-default">Submit</button>
+<% end %>
