@@ -8,6 +8,7 @@ DailyTracker::Application.routes.draw do
   root 'welcome#index'
   get 'task/new'=>"welcome#newTask",as: :new_task_page
   post "welcome/createTask"=>'welcome#createTask'
+  get 'welcome/send_mail'=>"welcome#send_mail",as: :send_mail
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,0 +1,12 @@
+Hi ,
+This is a report for today. The task are described below.
+Please have a look. The tasks are also recorded in the system and hence can be retrieved and analysed at a later stage as well.
+<%= @title %>
+
+<h1>Tasks</h1>
+<ul>
+<% for t in Task.where "DATE(created_at) = DATE(?)", Time.now %>
+  <li><%= t.project.name %> - <%= t.user.email %> - <%= t.desc %></li>
+
+<% end %>
+</ul>

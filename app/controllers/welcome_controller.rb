@@ -15,4 +15,10 @@ class WelcomeController < ApplicationController
     task.save!
     redirect_to "/",:notice => "Task Recorded successfully"
   end
+
+  def send_mail
+    DailyMail.send_daily_mail().deliver!
+
+
+  end
 end
